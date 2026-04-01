@@ -1,0 +1,186 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+  font-size: 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 2.3rem;
+}
+
+.header p {
+  margin: 0;
+  color: #4b5565;
+  font-size: 1.02rem;
+}
+
+.summary {
+  display: grid;
+  gap: 8px;
+  min-width: 260px;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #d7dfeb;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d7dfeb;
+  border-radius: 12px;
+}
+
+.filters label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.filters input,
+.filters select,
+.filters button,
+.pager button {
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid #c4cede;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+}
+
+.filters button,
+.pager button {
+  cursor: pointer;
+}
+
+.filters input::placeholder {
+  color: #b8c1cf;
+  opacity: 1;
+}
+
+.tableCard {
+  background: #ffffff;
+  border: 1px solid #d7dfeb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tableMeta,
+.pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+.tableWrapper {
+  overflow: auto;
+  border-top: 1px solid #e4eaf3;
+  border-bottom: 1px solid #e4eaf3;
+}
+
+table {
+  width: max-content;
+  border-collapse: collapse;
+  min-width: 1600px;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 8px 9px;
+  border-bottom: 1px solid #eef2f7;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+thead {
+  background: #f7f9fc;
+}
+
+.sortButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+}
+
+.sortButton span {
+  color: #667085;
+}
+
+.numericHeader,
+.numericCell {
+  text-align: right;
+}
+
+.numericSortButton {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.nameList {
+  display: grid;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.apartmentCell {
+  min-width: 360px;
+}
+
+.empty,
+.error {
+  padding: 24px;
+  text-align: center;
+  color: #b42318;
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .summary {
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.env
+
+# Virtual environments
+.venv
+
+# Local SQLite databases
+data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
+data/apartment_master.csv
+
+# Next.js
+frontend/.next/
+frontend/node_modules/
