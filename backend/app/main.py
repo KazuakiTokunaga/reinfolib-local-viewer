@@ -110,6 +110,8 @@ def list_transactions(
     price_max: int | None = Query(None),
     area_min: float | None = Query(None),
     area_max: float | None = Query(None),
+    age_min: int | None = Query(None),
+    age_max: int | None = Query(None),
     walk_max: int | None = Query(None),
     sort_by: Literal[
         "period_code",
@@ -166,6 +168,12 @@ def list_transactions(
     if area_max is not None:
         where_clauses.append("area_sqm <= ?")
         params.append(area_max)
+    if age_min is not None:
+        where_clauses.append("age_years >= ?")
+        params.append(age_min)
+    if age_max is not None:
+        where_clauses.append("age_years <= ?")
+        params.append(age_max)
     if walk_max is not None:
         where_clauses.append("walk_minutes IS NOT NULL AND walk_minutes <= ?")
         params.append(walk_max)

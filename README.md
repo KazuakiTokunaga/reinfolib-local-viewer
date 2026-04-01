@@ -152,6 +152,8 @@ cp .env.local.example .env.local
 npm run dev
 ```
 
+このリポジトリでは、開発サーバーは Turbopack ではなく webpack で起動します。
+
 ## Web アプリでできること
 
 - 一覧表示
@@ -190,6 +192,7 @@ npm run dev
 - `period_from`, `period_to`
 - `price_min`, `price_max`
 - `area_min`, `area_max`
+- `age_min`, `age_max`
 - `walk_max`
 - `sort_by`, `sort_order`
 

@@ -5,6 +5,7 @@ import os
 import shutil
 import signal
 import subprocess
+import sys
 import threading
 import time
 from pathlib import Path
@@ -81,8 +82,8 @@ def main() -> None:
 
     backend_process = start_process(
         [
-            "uv",
-            "run",
+            sys.executable,
+            "-m",
             "uvicorn",
             "backend.app.main:app",
             "--reload",

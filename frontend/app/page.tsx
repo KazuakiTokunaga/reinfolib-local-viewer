@@ -148,6 +148,8 @@ export default function HomePage() {
   const [priceMax, setPriceMax] = useState("");
   const [areaMin, setAreaMin] = useState("");
   const [areaMax, setAreaMax] = useState("");
+  const [ageMin, setAgeMin] = useState("");
+  const [ageMax, setAgeMax] = useState("");
   const [walkMax, setWalkMax] = useState("");
   const [sortBy, setSortBy] = useState<SortField>("period_code");
   const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
@@ -202,10 +204,14 @@ export default function HomePage() {
     }
     if (areaMin) params.set("area_min", areaMin);
     if (areaMax) params.set("area_max", areaMax);
+    if (ageMin) params.set("age_min", ageMin);
+    if (ageMax) params.set("age_max", ageMax);
     if (walkMax) params.set("walk_max", walkMax);
     return params.toString();
   }, [
     apartmentName,
+    ageMax,
+    ageMin,
     areaMax,
     areaMin,
     page,
@@ -254,6 +260,8 @@ export default function HomePage() {
     setPriceMax("");
     setAreaMin("");
     setAreaMax("");
+    setAgeMin("");
+    setAgeMax("");
     setWalkMax("");
     setSortBy("period_code");
     setSortOrder("desc");
@@ -289,7 +297,7 @@ export default function HomePage() {
         <div>
           <h1>不動産取引ビューア</h1>
           <p>
-            SQLite の取引データを一覧表示し、駅名・物件名候補・時期・価格・面積・徒歩分で
+            SQLite の取引データを一覧表示し、駅名・物件名候補・時期・価格・面積・築年数・徒歩分で
             絞り込みできます。列ヘッダをクリックすると並び替えできます。
           </p>
         </div>
@@ -380,6 +388,24 @@ export default function HomePage() {
             value={areaMax}
             onChange={(event) => onFilterChange(setAreaMax, event.target.value)}
             placeholder="80"
+          />
+        </label>
+
+        <label>
+          築年数下限
+          <input
+            value={ageMin}
+            onChange={(event) => onFilterChange(setAgeMin, event.target.value)}
+            placeholder="5"
+          />
+        </label>
+
+        <label>
+          築年数上限
+          <input
+            value={ageMax}
+            onChange={(event) => onFilterChange(setAgeMax, event.target.value)}
+            placeholder="20"
           />
         </label>
 
